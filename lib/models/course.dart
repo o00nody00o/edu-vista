@@ -1,3 +1,5 @@
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:edu_vista/models/category.dart';
 import 'package:edu_vista/models/instructor.dart';
 

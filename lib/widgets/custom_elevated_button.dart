@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:edu_vista/utils/color_utilis.dart';
 import 'package:flutter/material.dart';
 

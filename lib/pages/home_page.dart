@@ -1,6 +1,5 @@
-import 'dart:ffi';
 
-import 'package:edu_vista/models/category.dart';
+// import 'package:edu_vista/models/category.dart';
 import 'package:edu_vista/widgets/categories_widget.dart';
 import 'package:edu_vista/widgets/courses_widget.dart';
 import 'package:edu_vista/widgets/label_widget.dart';

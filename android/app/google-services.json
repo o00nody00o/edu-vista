@@ -12,7 +12,12 @@
           "package_name": "com.eduvista.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "331552180653-0pb2kjvpeb1jj8p9l2vr38gknhn7tnet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCCTF0XxXlxyuMIwvHonz9ZWu31HMxkvbI"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331552180653-0pb2kjvpeb1jj8p9l2vr38gknhn7tnet.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "331552180653-eb73uaelhpt9i1ruc19b6sudktls781q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.eduVista"
+              }
+            }
+          ]
         }
       }
     }

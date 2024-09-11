@@ -1,9 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ElevatedButtonRounded extends StatelessWidget {
   void Function()? onPressed;
-  MaterialStateProperty<Color?>? backgroundColor;
+  WidgetStateProperty<Color?>? backgroundColor;
   Widget? icon;
 
   ElevatedButtonRounded(

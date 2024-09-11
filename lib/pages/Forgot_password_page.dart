@@ -2,15 +2,15 @@ import 'package:edu_vista/widgets/custom_elevated_button.dart';
 import 'package:edu_vista/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class ResetPasswordPage extends StatefulWidget {
+class ForgotPasswordPage extends StatefulWidget {
   static const String id = 'resetPassword';
-  const ResetPasswordPage({super.key});
+  const ForgotPasswordPage({super.key});
 
   @override
-  State<ResetPasswordPage> createState() => _ResetPasswordPageState();
+  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
 }
 
-class _ResetPasswordPageState extends State<ResetPasswordPage> {
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

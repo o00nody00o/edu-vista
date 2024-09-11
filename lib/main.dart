@@ -1,5 +1,8 @@
+// ignore_for_file: unused_import
+
 import 'dart:ui';
 
+import 'package:device_preview/device_preview.dart';
 import 'package:edu_vista/blocs/course/course_bloc.dart';
 import 'package:edu_vista/blocs/lecture/lecture_bloc.dart';
 import 'package:edu_vista/cubit/auth_cubit.dart';
@@ -7,8 +10,10 @@ import 'package:edu_vista/firebase_options.dart';
 import 'package:edu_vista/pages/course_details_page.dart';
 import 'package:edu_vista/pages/home_page.dart';
 import 'package:edu_vista/pages/login_page.dart';
+import 'package:edu_vista/pages/my_CategoriesPage.dart';
+import 'package:edu_vista/pages/my_signUpPage.dart';
 import 'package:edu_vista/pages/onboarding_page.dart';
-import 'package:edu_vista/pages/reset_password_page.dart';
+import 'package:edu_vista/pages/Forgot_password_page.dart';
 import 'package:edu_vista/pages/signup_page.dart';
 import 'package:edu_vista/pages/splash_page.dart';
 import 'package:edu_vista/services/pref.service.dart';
@@ -28,16 +33,18 @@ void main() async {
   } catch (e) {
     print('Failed to initialize Firebase: $e');
   }
-  await dotenv.load(fileName: ".env");
+  // await dotenv.load(fileName: ".env");
 
-  runApp(MultiBlocProvider(
-    providers: [
-      BlocProvider(create: (ctx) => AuthCubit()),
-      BlocProvider(create: (ctx) => CourseBloc()),
-      BlocProvider(create: (ctx) => LectureBloc()),
-    ],
-    child: const MyApp(),
-  ));
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (ctx) => AuthCubit()),
+        BlocProvider(create: (ctx) => CourseBloc()),
+        BlocProvider(create: (ctx) => LectureBloc()),
+      ],
+      child: DevicePreview(enabled: true, builder: (context) => MyApp()),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -47,8 +54,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      scrollBehavior: _CustomScrollBehaviour(),
       debugShowCheckedModeBanner: false,
+      home: SignupPage(),
+      scrollBehavior: _CustomScrollBehaviour(),
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: ColorUtility.gbScaffold,
@@ -62,12 +70,13 @@ class MyApp extends StatelessWidget {
         switch (routeName) {
           case LoginPage.id:
             return MaterialPageRoute(builder: (context) => LoginPage());
-          case SignUpPage.id:
-            return MaterialPageRoute(builder: (context) => SignUpPage());
-          case ResetPasswordPage.id:
-            return MaterialPageRoute(builder: (context) => ResetPasswordPage());
+          case SignupPage.id:
+            return MaterialPageRoute(builder: (context) => SignupPage());
+          case ForgotPasswordPage.id:
+            return MaterialPageRoute(
+                builder: (context) => ForgotPasswordPage());
           case OnBoardingPage.id:
-            return MaterialPageRoute(builder: (context) => OnBoardingPage());
+            return MaterialPageRoute(builder: (context) => CategoriesPage());
           case HomePage.id:
             return MaterialPageRoute(builder: (context) => HomePage());
           case CourseDetailsPage.id:

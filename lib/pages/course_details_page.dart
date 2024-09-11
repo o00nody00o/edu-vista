@@ -5,7 +5,7 @@ import 'package:edu_vista/models/course.dart';
 import 'package:edu_vista/utils/color_utilis.dart';
 import 'package:edu_vista/widgets/course_options_widgets.dart';
 import 'package:edu_vista/widgets/lecture_chips.dart';
-import 'package:edu_vista/widgets/video_box.widget.dart';
+// import 'package:edu_vista/widgets/video_box.widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,30 +52,31 @@ class _CourseDetailsPageState extends State<CourseDetailsPage> {
         body: Stack(
       children: [
         // video bloc
-        BlocBuilder<LectureBloc, LectureState>(builder: (ctx, state) {
-          var stateEx = state is LectureChosenState ? state : null;
+        // BlocBuilder<LectureBloc, LectureState>(builder: (ctx, state) {
+        //   var stateEx = state is LectureChosenState ? state : null;
 
-          if (stateEx == null) {
-            return const SizedBox.shrink();
-          }
+        //   if (stateEx == null) {
+        //     return const SizedBox.shrink();
+        //   }
 
-          return Container(
-            height: 250,
-            child: stateEx.lecture.lecture_url == null ||
-                    stateEx.lecture.lecture_url == ''
-                ? const Center(
-                    child: Text(
-                    'Invalid Url',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ))
-                : VideoBoxWidget(
-                    url: stateEx.lecture.lecture_url ?? '',
-                  ),
-          );
-        }),
+        //   return Container(
+        //     height: 250,
+        //     child: stateEx.lecture.lecture_url == null ||
+        //             stateEx.lecture.lecture_url == ''
+        //         ? const Center(
+        //             child: Text(
+        //             'Invalid Url',
+        //             style: TextStyle(
+        //                 color: Colors.black,
+        //                 fontSize: 20,
+        //                 fontWeight: FontWeight.bold),
+        //           ))
+        //         :
+        //          VideoBoxWidget(
+        //             url: stateEx.lecture.lecture_url ?? '',
+        //           ),
+        //   );
+        // }),
         Align(
             alignment: Alignment.bottomCenter,
             child: AnimatedContainer(

@@ -1,9 +1,10 @@
 import 'package:edu_vista/pages/login_page.dart';
+import 'package:edu_vista/pages/my_signUpPage.dart';
 import 'package:edu_vista/pages/signup_page.dart';
 import 'package:edu_vista/utils/color_utilis.dart';
 import 'package:edu_vista/widgets/Custom_text_button.dart';
 import 'package:edu_vista/widgets/custom_elevated_button.dart';
-import 'package:edu_vista/widgets/custom_text_form_field.dart';
+// import 'package:edu_vista/widgets/custom_text_form_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -132,7 +133,7 @@ class _AuthTemplateWidgetState extends State<AuthTemplateWidget> {
                   label: isLogin ? 'Sign Up' : 'Login',
                   onPressed: () {
                     Navigator.pushNamed(
-                        context, isLogin ? SignUpPage.id : LoginPage.id);
+                        context, isLogin ? SignupPage.id : LoginPage.id);
                   },
                 )
               ],
